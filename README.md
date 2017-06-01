@@ -15,6 +15,12 @@ Permissioned Component rendering in React
 [coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/user/repo
 
+## Installation
+
+```
+npm install --save react-permissions
+```
+
 ## Basic Usage
 
 ### Component Definition
@@ -136,7 +142,7 @@ const ViewComponent = (props) => {
  ```
  
  
- ## Contributing
+## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/IkoroVictor/react-permissions. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
