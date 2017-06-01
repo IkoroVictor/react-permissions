@@ -18,7 +18,8 @@ Permissioned Component rendering in React
 ## Basic Usage
 
 ### Component Definition
-```
+
+```javascript
 import React from 'react';
 import {Permissioned} from  'react-permissions';
 
@@ -79,7 +80,7 @@ class MyComponent extends React.Component
 {
    render(){
       return(
-        <div>Hey there, i'm a component</div>
+        <div>Hey there, i am a component<div/>
         );
    }
 }
@@ -107,9 +108,34 @@ By default, the permisioned component renders if the user has at least one of th
  ```
  
  ### Alternate View
+ You can set an alternate view component which will be render in place of the permissioned component when restricted. Alternate view should be set as a `alternateView` prop
  
+ 
+```javascript
 
+import React from 'react';
+import MyComponent from './myComponent.js'
 
+const MyAlternateView = (props) => {
+   return(
+      <div>You are not allowed to view this<div/>
+   );
+
+}
+const ViewComponent = (props) => {
+  
+    return (
+    <div>
+      <MyComponent alternateView={MyAlternateView}  hasAll={true} allowedPermissions={["VIEW", "UPDATE"]}/>
+     <div/>
+     );
+ 
+ }
+ 
+ export default ViewComponent;
+ ```
+ 
+ 
 
 
 
