@@ -27,7 +27,7 @@ class MyComponent extends React.Component
 {
    render(){
       return(
-        <div>Hey there, i'm a component</div>
+        <div>Hey there, i am a component</div>
         );
    }
 }
@@ -85,6 +85,31 @@ class MyComponent extends React.Component
 }
 export connect(mapStateToProps, Permissioned(MyComponent));
 ```
+
+### hasAll
+By default, the permisioned component renders if the user has at least one of the `allowedPermission`.  Set `hasAll` prop to `true` to require all `allowedPermissions`
+
+```javascript
+ import React from 'react';
+ import MyComponent from './myComponent.js'
+ 
+ const ViewComponent = (props) => {
+  
+    return (
+    <div>
+      <MyComponent  hasAll={true} allowedPermissions={["VIEW", "UPDATE"]}/>
+     <div/>
+     );
+ 
+ }
+ 
+ export default ViewComponent;
+ ```
+ 
+ ### Alternate View
+ 
+
+
 
 
 
