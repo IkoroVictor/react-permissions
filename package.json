@@ -32,11 +32,17 @@
     "react-dom": "^15.5.4",
     "react-test-renderer": "^15.5.4"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Victor Ikoro",
+  "homepage": "https://github.com/IkoroVictor",
   "license": "MIT",
-  "repository": "",
+  "repository": "https://github.com/IkoroVictor/react-permissions.git",
   "keywords": [
-    "react-component"
+    "react-component",
+    "react-permissions",
+    "react",
+    "permission",
+    "auth",
+    "rendering",
+    "redux"
   ]
 }
