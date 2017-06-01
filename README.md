@@ -15,7 +15,7 @@ Permissioned Component rendering in React
 [coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
 [coveralls]: https://coveralls.io/github/user/repo
 
-##Basic Usage
+## Basic Usage
 
 ### Component Definition
 ```
@@ -60,13 +60,20 @@ import {Permissioned} from  'react-permissions';
 
 Permissioned.allPermissions = ["VIEW", "UPDATE", "DELETE", "EDIT", "SIGN_IN", "CREATE_USER", "UPLOAD"];
 ```
+For store connected components
 
 ```javascript
 import React from 'react';
 import {Permissioned} from  'react-permissions';
+import {connect} from 'react-redux';
 
 Permissioned.mapPermissions = (storeConnectedProps) =>{
+      //map & return an array of user permissions gotten from props 
+}
 
+const mapStateToProps(state, ownProps)
+{
+      //State to props mapping (redux)
 }
 class MyComponent extends React.Component
 {
@@ -76,7 +83,8 @@ class MyComponent extends React.Component
         );
    }
 }
-
+export connect(mapStateToProps, Permissioned(MyComponent));
+```
 
 
 
