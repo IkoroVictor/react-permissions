@@ -4,7 +4,7 @@
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-Describe react-permissions here.
+Permissioned Component rendering in React
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
