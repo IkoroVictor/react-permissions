@@ -6,14 +6,14 @@
 
 Permissioned Component rendering in React
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+[build-badge]: https://img.shields.io/travis/ikorovictor/react-permissions/master.png?style=flat-square
+[build]: https://travis-ci.org/ikorovictor/react-permissions
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+[npm-badge]: https://img.shields.io/npm/v/react-permissions.png?style=flat-square
+[npm]: https://www.npmjs.org/package/react-permissions
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+[coveralls-badge]: https://img.shields.io/coveralls/ikorovictor/react-permissions/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/ikorovictor/react-permissions
 
 ## Basic Usage
 
