@@ -30,7 +30,7 @@ export function Permissioned(WrappedComponent, allowedPermissions) {
                 }).length > 0;
                
             });
-            hasPermissionTo = and ? (hasPermissionTo  && filteredList.length  === this.state.allowedPermissions.length) : (hasPermissionTo  || filteredList.length > 0);
+            hasPermissionTo = and ? (filteredList.length  === this.state.allowedPermissions.length) : (filteredList.length > 0);
             return hasPermissionTo;
         }
         render() {
