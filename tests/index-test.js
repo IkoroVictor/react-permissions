@@ -5,7 +5,7 @@ import {render, unmountComponentAtNode} from 'react-dom'
 import {Permissioned} from 'src/'
 
 
-Permissioned.allPermissions = ["VIEW_COMPONENT", "CREATE_COMPONENT", "USE_COMPONENT", "UPDATE_COMPONENT", "DELETE_COMPONENT"];
+Permissioned.prototype.allPermissions = ["VIEW_COMPONENT", "CREATE_COMPONENT", "USE_COMPONENT", "UPDATE_COMPONENT", "DELETE_COMPONENT"];
 
 const elementId = "componentId";
 const testMessage =  "Hey i rendered";
@@ -78,6 +78,11 @@ const simulatedUserObject = {
   userPermissions : ["VIEW_COMPONENT", "CREATE_COMPONENT", "USE_COMPONENT", "UPDATE_COMPONENT", "DELETE_COMPONENT"]
 }
 
+const simulatedUserObjectNoPermissions = {
+  name : "Victor Ikoro",
+  userPermissions : []
+}
+
 //Must return an array of permissions mapped from props(which may be mapped from a redux state using mapStateToProps)
 Permissioned.mapPermissions = (props) =>
 {
@@ -127,6 +132,13 @@ describe('Component Permission Test (with downstream state change &&  permission
     let PermissionedComponent = Permissioned(MyComponent, ["ARBITRATE_COMPONENT", "CREATE_COMPONENT"]);
     render(<PermissionedComponent myUserReducerObject={simulatedUserObject} hasAll={true}/>, node, () => {
       
+      expect(node.innerHTML).toNotContain(testMessage);
+    })
+  })
+
+  it('doesnt have permission (no permissions)', () => {
+    let PermissionedComponent = Permissioned(MyComponent);
+    render(<PermissionedComponent myUserReducerObject={simulatedUserObjectNoPermissions} allowedPermissions={["ARBITRATE_COMPONENT", "CREATE_COMPONENT"]}/>, node, () => {
       expect(node.innerHTML).toNotContain(testMessage);
     })
   })
