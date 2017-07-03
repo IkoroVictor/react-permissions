@@ -8,19 +8,17 @@ export function Permissioned(WrappedComponent, allowedPermissions) {
             this.state = {
                 allowedPermissions: allowedPermissions || (props.allowedPermissions ||  [])
             };
-            this.allPermissions = Permissioned.prototype.allPermissions || [];
+            this.allPermissions = Permissioned.prototype.allPermissions || (Permissioned.mapPermissions ? Permissioned.mapPermissions(props) : []);
             this.alternateView = props.alternateView ||  React.createClass({render(){ return <div/>}});
 
         }
 
         componentWillReceiveProps(nextProps) {
             nextProps.allowedPermissions && this.setState({ allowedPermissions: nextProps.allowedPermissions });
-            this.allPermissions =  Permissioned.prototype.allPermissions || Permissioned.mapPermissions(nextProps);
         }
         componentWillUpdate(props,state)
         {
-            props.allowedPermissions && this.setState({ allowedPermissions: props.allowedPermissions });
-            this.allPermissions =  Permissioned.prototype.allPermissions  || Permissioned.mapPermissions(props);
+            this.allPermissions = Permissioned.prototype.allPermissions || (Permissioned.mapPermissions ? Permissioned.mapPermissions(props) : []);
         }
         hasPermission(and)
         {   
